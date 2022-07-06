@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 
 app.set("view engine", "ejs");
+app.set("views", __dirname + "/../views");
 app.use(express.static(__dirname + "/../public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
