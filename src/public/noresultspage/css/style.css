@@ -1,0 +1,155 @@
+/* FONT SIZES: 1rem/10.00px
+1.25rem/12.50px
+1.563rem/15.63px
+1.953rem/19.53px
+2.441rem/24.41px
+3.052rem/30.52px
+3.815rem/38.15px	
+4.768rem/47.68px	
+5.96rem/59.60px	
+7.451rem/74.51px
+9.313rem/93.13px
+*/
+
+/* SPACING: 
+2px
+4px
+8px
+12px
+16px
+24px
+32px
+40px
+48px
+64px
+80px
+96px
+160px */
+
+body {
+  background-color: #272660;
+}
+/* HEADER STYLES */
+
+.header {
+  padding-top: 1.6rem;
+  margin-bottom: 3.2rem;
+}
+
+.logo {
+  font-size: 2.441rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navigation-option {
+  color: #fff;
+  font-size: 2.441rem;
+  outline: 0;
+  border: 0;
+  background: 0;
+  cursor: pointer;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+
+.navigation-option:active,
+.navigation-option:hover {
+  color: rgb(253, 225, 247);
+}
+
+.logo,
+.navigation-first-option {
+  margin-right: 2.4rem;
+}
+
+/* SEARCHING PART */
+
+.search-form {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 3.2rem;
+}
+
+.close-btn {
+  cursor: pointer;
+  background: none;
+  border: none;
+  background-image: url(/img/close.svg);
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: var(--edge-distance, 2.4rem);
+  top: 0;
+  display: none;
+  z-index: 2;
+}
+
+.inputs-container {
+  position: relative;
+  flex: 1 0 65%;
+}
+
+.inputs-container::after,
+.inputs-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  height: 2px;
+  background-color: #d9d9d9;
+  transform: translateY(-1px);
+  left: var(--edge-distance, 2.4rem);
+  right: 0;
+}
+
+.origin-input-container,
+.destination-input-container {
+  padding: 0.4rem 0;
+}
+
+.search-button-container {
+  flex: 1 0 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 140px;
+}
+
+.search-button {
+  cursor: pointer;
+  width: 55%;
+  max-width: 60px;
+  padding-top: min(55%, 60px);
+  border-radius: 10px;
+  border: none;
+  background-color: #b929da;
+  background-image: url(/img/search.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 40%;
+  transition: background-color 0.2s;
+}
+
+.search-button:hover,
+.search-button:active {
+  background-color: #9421ae;
+}
+
+.no-results-container {
+  margin-top: 4.8rem;
+}
+.no-results-text {
+  font-size: 2.441rem;
+  text-align: center;
+  margin-bottom: 0.4rem;
+}
+
+.no-results-subtext {
+  font-size: 1.953rem;
+  text-align: center;
+}

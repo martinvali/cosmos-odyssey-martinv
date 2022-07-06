@@ -1,0 +1,35 @@
+<article class="booking-container">
+  <header class="booking-header">
+    <p class="booking-company"><%=booking.route.companyName%></p>
+    <p class="booking-route">
+      <%=booking.route.from%> - <%= booking.route.to %>
+    </p>
+  </header>
+  <div class="booking-features-container">
+    <div class="booking-distance-container">
+      <img
+        src="./bookingspage/img/distance.svg"
+        alt="distance icon"
+        class="booking-distance-icon"
+      />
+      <p class="booking-distance-text"><%=booking.route.distance%>km</p>
+    </div>
+    <div class="booking-dates-container">
+      <img
+        src="./bookingspage/img/calendar.svg"
+        alt="calendar icon"
+        class="booking-dates-icon"
+      />
+      <p class="booking-dates-text"><%=booking.route.travelDates%></p>
+    </div>
+    <div class="booking-time-container">
+      <img
+        src="./bookingspage/img/clock.svg"
+        alt="clock icon"
+        class="booking-time-icon"
+      />
+      <p class="booking-time-text"><%=booking.route.travelTime%></p>
+    </div>
+  </div>
+  <p class="booking-price"><%=booking.route.travelPrice%></p>
+</article>

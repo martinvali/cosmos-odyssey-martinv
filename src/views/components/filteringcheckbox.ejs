@@ -1,0 +1,12 @@
+<div class="filtering-option-container">
+  <label for="<%=providerName%>" class="filtering-label"
+    ><%=providerName%></label
+  >
+  <div class="filter-checkbox-container">
+    <!-- prettier-ignore -->
+    <input <% if(!filter.includes(providerName)) { %>
+    <%= "checked" %> <% } %> type="checkbox" name="<%=providerName%>"
+    id="<%=providerName%>" class="company-filter" />
+    <span class="company-filter-style"></span>
+  </div>
+</div>

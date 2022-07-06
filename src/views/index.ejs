@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cosmos odyssey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="mainpage/css/general.css" />
+    <link rel="stylesheet" href="mainpage/css/autocomplete.css" />
+    <link rel="stylesheet" href="mainpage/css/style.css" />
+    <link rel="stylesheet" href="mainpage/css/media.css" />
+    <script defer src="mainpage/js/index.js"></script>
+  </head>
+  <body class="body">
+    <%- include("./components/header.ejs") %>
+    <main class="main outer-container max-width-container">
+      <div class="main-text-container">
+        <p class="welcome-text">Welcome to</p>
+        <h1 class="h1">
+          Cosmos <span class="color-pink--light">Odyssey</span>
+        </h1>
+        <h2 class="h2">
+          Book your next trip to a planet of your choice with the best fares on
+          the market.
+        </h2>
+        <form action="routes" class="search-form">
+          <div class="inputs-container">
+            <button type="button" class="close-btn"></button>
+            <div class="origin-input-container">
+              <label class="form-label form-label--origin" for="origin"
+                >Origin</label
+              >
+              <div class="origin-container"></div>
+            </div>
+
+            <div class="destination-input-container">
+              <label
+                class="form-label form-lable--destination"
+                for="destination"
+                >Destination</label
+              >
+              <div class="destination-container"></div>
+            </div>
+          </div>
+          <div class="search-button-container">
+            <button type="submit" class="search-button"></button>
+          </div>
+        </form>
+      </div>
+      <img class="illustration-img" src="mainpage/img/planet.svg" />
+    </main>
+  </body>
+</html>

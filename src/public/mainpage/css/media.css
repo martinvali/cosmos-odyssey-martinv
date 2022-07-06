@@ -1,0 +1,200 @@
+@media screen and (min-width: 36.25em) {
+  :root {
+    --edge-distance: 3.2rem;
+  }
+
+  .header {
+    margin-bottom: 16rem;
+  }
+
+  .logo {
+    font-size: 3.052rem;
+  }
+
+  .logo,
+  .navigation-first-option {
+    margin-right: 3.2rem;
+  }
+
+  .h2 {
+    padding-bottom: 2.4rem;
+  }
+
+  .search-form {
+    max-width: 600px;
+  }
+
+  .inputs-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .selected--mobile .inputs-container {
+    display: block;
+  }
+
+  .selected--mobile .inputs-container::after,
+  .selected--mobile .inputs-container::before {
+    left: var(--edge-distance, 2.4rem);
+    right: var(--edge-distance, 2.4rem);
+    height: 2px;
+    width: auto;
+  }
+
+  .selected--mobile .inputs-container::after {
+    top: calc(50% + 1.6rem);
+  }
+
+  .selected--mobile .inputs-container::before {
+    top: 100%;
+  }
+
+  .search-button {
+    width: 55%;
+    max-width: 50px;
+    padding-top: min(55%, 50px);
+  }
+
+  .search-button-container {
+    max-width: 100px;
+  }
+
+  .selected--mobile .origin-input-container {
+    padding-top: 3.2rem;
+  }
+
+  .autocomplete__input {
+    margin-top: -2px;
+  }
+
+  .destination-input-container .form-label,
+  .destination-input-container input {
+    padding-left: 0;
+  }
+
+  .selected--mobile .destination-input-container .form-label,
+  .selected--mobile .destination-input-container input {
+    padding-left: var(--edge-distance);
+  }
+
+  .inputs-container::before,
+  .inputs-container::after {
+    display: block;
+    width: 2px;
+    height: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .inputs-container::before {
+    left: 37.5%;
+  }
+
+  .inputs-container::after {
+    left: 90%;
+  }
+  .illustration-img {
+    display: inline-block;
+    max-width: 300px;
+  }
+}
+
+@media screen and (min-width: 48.75em) {
+  :root {
+    --edge-distance: 4.8rem;
+  }
+
+  .header {
+    padding-top: 3.2rem;
+  }
+
+  .logo,
+  .navigation-first-option {
+    margin-right: 4rem;
+  }
+
+  .outer-container {
+    padding-left: 4.8rem;
+    padding-right: 4.8rem;
+  }
+
+  .h1 {
+    font-size: 5.96rem;
+  }
+  .h2 {
+    font-size: 2.441rem;
+  }
+
+  .form-label {
+    font-size: 1.953rem;
+  }
+  .autocomplete__input {
+    font-size: 2.441rem;
+  }
+
+  .search-button {
+    width: 100%;
+    max-width: 65px;
+    padding-top: min(100%, 65px);
+  }
+  .origin-input-container,
+  .destination-input-container {
+    padding: 0.8rem 0;
+  }
+
+  .illustration-img {
+    display: inline-block;
+    max-width: 350px;
+  }
+}
+
+@media screen and (min-width: 70em) {
+  .header {
+    padding-top: 4.8rem;
+    margin-bottom: 20rem;
+  }
+
+  .logo {
+    font-size: 3.815rem;
+  }
+
+  .logo,
+  .navigation-first-option {
+    margin-right: 4.8rem;
+  }
+
+  .navigation-option {
+    font-size: 3.052rem;
+  }
+
+  .illustration-img {
+    max-width: 400px;
+  }
+
+  .welcome-text {
+    font-size: 4.768rem;
+  }
+
+  .h1 {
+    font-size: 7.451rem;
+    margin-bottom: 2.4rem;
+  }
+  .h2 {
+    font-size: 3.052rem;
+  }
+}
+
+@media screen and (min-width: 75em) {
+  .logo,
+  .navigation-first-option {
+    margin-right: 6.4rem;
+  }
+
+  .illustration-img {
+    max-width: 600px;
+  }
+
+  .autocomplete__input {
+    margin-top: -4px;
+  }
+}

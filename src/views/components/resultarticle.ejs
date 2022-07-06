@@ -1,0 +1,35 @@
+<article class="result-container">
+  <p class="result-company"><%=provider.company.name%></p>
+  <div class="result-features-container">
+    <div class="result-distance-container">
+      <img
+        src="resultspage/img/distance.svg"
+        alt="distance icon"
+        class="result-distance-icon"
+      />
+      <p class="result-distance-text"><%=distance%>km</p>
+    </div>
+    <div class="result-dates-container">
+      <img
+        src="resultspage/img/calendar.svg"
+        alt="calendar icon"
+        class="result-dates-icon"
+      />
+      <p class="result-dates-text"><%=provider.flightDates%></p>
+    </div>
+    <div class="result-time-container">
+      <img
+        src="resultspage/img/clock.svg"
+        alt="clock icon"
+        class="result-time-icon"
+      />
+      <p class="result-time-text"><%=provider.flightTime%></p>
+    </div>
+  </div>
+  <div class="result-reserve-container">
+    <p class="result-price"><%=provider.price%>€</p>
+    <button type="button" class="reserve-button" data-id="<%=provider.id%>">
+      Reserve
+    </button>
+  </div>
+</article>

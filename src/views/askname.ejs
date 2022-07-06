@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search results</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./askname/css/general.css" />
+    <link rel="stylesheet" href="./askname/css/style.css" />
+    <link rel="stylesheet" href="./askname/css/media.css" />
+    <script defer src="./askname/js/script.js"></script>
+  </head>
+  <body class="body">
+    <%-include("./components/header.ejs")%>
+    <main class="main outer-container max-width-container">
+      <h1 class="contact-heading">Please enter your information</h1>
+      <div class="ask-container">
+        <form action="/" class="contact-form">
+          <div class="ask-inputs-container">
+            <div class="firstname-input-container">
+              <label for="firstname" class="form-label">First name</label>
+              <input
+                id="firstname"
+                name="firstname"
+                type="text"
+                placeholder="John"
+                class="ask-input first-name-input"
+                required
+              />
+            </div>
+            <div class="surname-input-container">
+              <label for="surname" class="form-label">Surname</label>
+              <input
+                id="surname"
+                name="lastname"
+                type="text"
+                placeholder="Apple"
+                class="ask-input surname-input"
+                required
+              />
+            </div>
+          </div>
+          <button type="submit" class="search-button">Search</button>
+        </form>
+      </div>
+      <img class="illustration-img" src="./askname/img/planet.svg" />
+    </main>
+  </body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search results</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="resultspage/css/general.css" />
+    <link rel="stylesheet" href="resultspage/css/autocomplete.css" />
+    <link rel="stylesheet" href="resultspage/css/style.css" />
+    <link rel="stylesheet" href="resultspage/css/media.css" />
+    <script
+    src="https://cdn.socket.io/4.5.0/socket.io.min.js"
+    integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k"
+    crossorigin="anonymous"
+    defer
+    ></script>
+    <script src="resultspage/js/main.js" defer></script>
+  </head>
+  <body class="body">
+    <%- include("./components/header.ejs"); %>
+    <main class="main outer-container max-width-container">
+      <div class="flex-container">
+        <div class="flex-left-container">
+          <form class="search-form" data-from="<%=searchedRoute.routeInfo.from.name%>" data-to="<%=searchedRoute.routeInfo.to.name%>" data-distance=<%=searchedRoute.routeInfo.distance%>>
+            <div class="inputs-container">
+              <button type="button" class="close-btn"></button>
+              <div class="origin-input-container">
+                <label class="form-label form-label--origin" for="origin"
+                  >Origin</label
+                >
+                <div class="origin-container"></div>
+              </div>
+
+              <div class="destination-input-container">
+                <label
+                  class="form-label form-lable--destination"
+                  for="destination"
+                  >Destination</label
+                >
+                <div class="destination-container"></div>
+              </div>
+            </div>
+            <div class="search-button-container">
+              <button type="submit" class="search-button"></button>
+            </div>
+          </form>
+          <div class="sorting-filtering-container">
+            <div class="options-number-container">
+              <p class="options-number">
+                <%= searchedRoute.providers.filter(arr => !filter.includes(arr.company.name)).length %> options found
+              </p>
+            </div>
+            <div class="sorting-container">
+              <select name="sort" id="sort" class="sorting-button">
+                <option
+                  <%= sort === "cheapest" ? selected="selected" : "" %>
+                  value="cheapest"
+                  class="sorting-option"
+                >
+                  Cheapest
+                </option>
+                <option 
+                <%= sort === "priciest" ? selected="selected" : "" %>
+                value="priciest" class="sorting-option">
+                  Priciest
+                </option>
+
+                <option
+                <%= sort === "fastest" ? selected="selected" : "" %>
+ 
+                value="fastest" class="sorting-option">Fastest</option>
+                <option
+                <%= sort === "slowest" ? selected="selected" : "" %>
+                value="slowest" class="sorting-option">Slowest</option>
+              </select>
+            </div>
+            <div class="filtering-container">
+              <button type="button" class="filtering-button">Filter</button>
+            </div>
+          </div>
+          <div class="results-container">
+            <% const providerNames = new Set(); %> <%
+            searchedRoute.providers.forEach(function(provider) { %> <%
+            providerNames.add(provider.company.name); %>
+            <% if(!filter.includes(provider.company.name)) { %>
+             <%-
+            include("components/resultarticle", {provider, distance:
+            searchedRoute.routeInfo.distance}) %>
+             <% } %>
+             <% }); %>
+          </div>
+        </div>
+        <div class="flex-right-container">
+          <div class="filtering-options-container">
+            <header class="filtering-heading-container">
+              <p class="filtering-text">Filter by company</p>
+              <button type="button" class="filtering-close-button"></button>
+            </header>
+            <form action="" class="filtering-options">
+              <% providerNames.forEach(function(providerName) { %>
+               
+                 <%-
+              include("components/filteringcheckbox", {providerName, filter}) %>
+             
+              <% }); %>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="reservation-container">
+        <header class="reservation-heading-container">
+          <p class="reservation-text">Reservation</p>
+          <button type="button" class="reservation-close-button"></button>
+        </header>
+        <form class="reservation-form" method="POST" action="/bookings" >
+          <div class="reservation-inputs-container">
+            <div class="firstname-input-container">
+              <label for="firstname" class="form-label reservation-form-label">First name</label>
+              <input id="firstname" name="firstname" type="text" placeholder="John" class="reservation-input" required>
+            </div>
+            <div class="surname-input-container">
+              <label for="surname" class="form-label reservation-form-label">Surname</label>
+              <input id="surname" name="lastname" type="text" placeholder="Apple" class="reservation-input" required>
+            </div>
+          </div>
+          <button type="submit" class="reservation-complete-button">Reserve</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search results</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="noresultspage/css/general.css" />
+    <link rel="stylesheet" href="noresultspage/css/autocomplete.css" />
+    <link rel="stylesheet" href="noresultspage/css/style.css" />
+    <link rel="stylesheet" href="noresultspage/css/media.css" />
+
+    <script src="noresultspage/js/noresults.js" defer></script>
+  </head>
+  <body class="body">
+    <%- include("./components/header.ejs") %>
+    <main class="main outer-container max-width-container">
+      <div class="flex-container">
+        <div class="flex-left-container">
+          <form class="search-form">
+            <div class="inputs-container">
+              <button type="button" class="close-btn"></button>
+              <div class="origin-input-container">
+                <label class="form-label form-label--origin" for="origin"
+                  >Origin</label
+                >
+                <div class="origin-container"></div>
+              </div>
+
+              <div class="destination-input-container">
+                <label
+                  class="form-label form-lable--destination"
+                  for="destination"
+                  >Destination</label
+                >
+                <div class="destination-container"></div>
+              </div>
+            </div>
+            <div class="search-button-container">
+              <button type="submit" class="search-button"></button>
+            </div>
+          </form>
+
+          <div class="no-results-container">
+            <p class="no-results-text">No results were found</p>
+            <p class="no-results-subtext">Please refine your search</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,139 @@
+@media screen and (min-width: 36.25em) {
+  :root {
+    --edge-distance: 3.2rem;
+  }
+
+  .logo {
+    font-size: 3.052rem;
+  }
+
+  .logo,
+  .navigation-first-option {
+    margin-right: 3.2rem;
+  }
+
+  .contact-heading {
+    font-size: 3.052rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .ask-container {
+    padding: 1.6rem 3.2rem;
+  }
+
+  .reservation-input {
+    margin-top: -2px;
+  }
+
+  .search-button {
+    font-size: 3.052rem;
+  }
+
+  .surname-input-container {
+    margin-bottom: 4rem;
+  }
+}
+
+@media screen and (min-width: 48.75em) {
+  :root {
+    --edge-distance: 4.8rem;
+  }
+
+  .header {
+    padding-top: 3.2rem;
+  }
+
+  .logo,
+  .navigation-first-option {
+    margin-right: 4rem;
+  }
+
+  .outer-container {
+    padding-left: 4.8rem;
+    padding-right: 4.8rem;
+  }
+
+  .contact-heading {
+    font-size: 3.815rem;
+    margin-bottom: 3.2rem;
+  }
+
+  .ask-container {
+    padding: 2.4rem 4.8rem;
+  }
+
+  .form-label {
+    font-size: 1.953rem;
+  }
+
+  .reservation-input {
+    font-size: 2.441rem;
+  }
+
+  .surname-input-container {
+    margin-bottom: 4.8rem;
+  }
+
+  .illustration-img {
+    display: inline-block;
+    width: 300px;
+  }
+}
+
+@media screen and (min-width: 70em) {
+  .header {
+    padding-top: 4.8rem;
+    margin-bottom: 4.8rem;
+  }
+
+  .logo {
+    font-size: 3.815rem;
+  }
+
+  .logo,
+  .navigation-first-option {
+    margin-right: 4.8rem;
+  }
+
+  .navigation-option {
+    font-size: 3.052rem;
+  }
+
+  .contact-heading {
+    margin-bottom: 4.8rem;
+  }
+
+  .ask-inputs-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4.8rem;
+  }
+
+  .firstname-input-container,
+  .surname-input-container {
+    margin-bottom: 0;
+  }
+
+  .illustration-img {
+    width: 400px;
+  }
+}
+
+@media screen and (min-width: 75em) {
+  .logo,
+  .navigation-first-option {
+    margin-right: 6.4rem;
+  }
+
+  .contact-heading {
+    font-size: 4.768rem;
+  }
+
+  .reservation-input {
+    margin-top: -4px;
+  }
+
+  .illustration-img {
+    width: 600px;
+  }
+}

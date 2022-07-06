@@ -1,0 +1,173 @@
+@media screen and (min-width: 36.25em) {
+  :root {
+    --edge-distance: 3.2rem;
+  }
+
+  .logo {
+    font-size: 3.052rem;
+  }
+
+  .logo,
+  .navigation-first-option {
+    margin-right: 3.2rem;
+  }
+
+  .bookings-heading {
+    font-size: 3.052rem;
+    margin-bottom: 2.4rem;
+  }
+
+  /* RESULTS AREA */
+
+  .booking-container {
+    padding: 1.6rem 3.2rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .booking-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .booking-company,
+  .booking-route {
+    font-size: 2.441rem;
+    margin-bottom: 0;
+  }
+
+  .booking-header {
+    margin-bottom: 1.6rem;
+  }
+
+  .booking-features-container {
+    margin-bottom: 1.2rem;
+  }
+
+  .booking-distance-text,
+  .booking-dates-text,
+  .booking-time-text {
+    font-size: 1.953rem;
+  }
+
+  .booking-distance-icon,
+  .booking-dates-icon,
+  .booking-time-icon {
+    width: 22px;
+  }
+
+  .booking-price {
+    font-size: 2.441rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .no-bookings-text {
+    font-size: 3.052rem;
+  }
+}
+
+@media screen and (min-width: 48.75em) {
+  :root {
+    --edge-distance: 4.8rem;
+  }
+
+  .header {
+    padding-top: 3.2rem;
+  }
+
+  .logo,
+  .navigation-first-option {
+    margin-right: 4rem;
+  }
+
+  .outer-container {
+    padding-left: 4.8rem;
+    padding-right: 4.8rem;
+  }
+
+  .bookings-heading {
+    font-size: 3.815rem;
+    margin-bottom: 3.2rem;
+  }
+
+  .no-bookings-text {
+    font-size: 3.815rem;
+  }
+
+  /* BOOKINGS AREA */
+
+  .booking-container {
+    padding: 2.4rem 4.8rem;
+  }
+
+  .booking-header {
+    margin-bottom: 2.4rem;
+  }
+  .booking-company {
+    font-size: 3.052rem;
+  }
+
+  .booking-features-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 1.8rem;
+  }
+
+  .booking-price {
+    margin-bottom: 0;
+    font-size: 3.052rem;
+  }
+
+  .illustration-img {
+    display: inline-block;
+    width: 300px;
+  }
+}
+
+@media screen and (min-width: 70em) {
+  .header {
+    padding-top: 4.8rem;
+    margin-bottom: 4.8rem;
+  }
+
+  .logo {
+    font-size: 3.815rem;
+  }
+
+  .logo,
+  .navigation-first-option {
+    margin-right: 4.8rem;
+  }
+
+  .navigation-option {
+    font-size: 3.052rem;
+  }
+
+  .bookings-heading {
+    margin-bottom: 4.8rem;
+  }
+
+  .illustration-img {
+    width: 400px;
+  }
+
+  .no-bookings-text {
+    font-size: 4.768rem;
+  }
+}
+
+@media screen and (min-width: 75em) {
+  .logo,
+  .navigation-first-option {
+    margin-right: 6.4rem;
+  }
+
+  .bookings-heading {
+    font-size: 4.768rem;
+  }
+
+  .illustration-img {
+    width: 600px;
+  }
+}
