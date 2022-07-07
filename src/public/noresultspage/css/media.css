@@ -39,6 +39,18 @@
     top: 100%;
   }
 
+  .origin-input-container {
+    flex: 1 0 37.5%;
+  }
+
+  .search-form .destination-input-container {
+    padding-left: 15%;
+  }
+
+  .search-form.selected--mobile .destination-input-container {
+    padding-left: 0;
+  }
+
   .search-button {
     width: 55%;
     max-width: 50px;

@@ -102,6 +102,7 @@ body {
   display: block;
   padding-top: 2.4rem;
   max-width: none;
+  z-index: 1000;
 }
 .search-form.selected--mobile {
   position: absolute;
