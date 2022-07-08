@@ -296,6 +296,7 @@
     gap: 0;
     justify-content: space-between;
   }
+
   .filtering-container {
     display: none;
   }
@@ -303,6 +304,10 @@
   .reservation-container {
     padding: 2.4rem;
     border-radius: 10px;
+  }
+
+  .reservation-container.visible {
+    position: absolute;
   }
 
   .reservation-heading-container {

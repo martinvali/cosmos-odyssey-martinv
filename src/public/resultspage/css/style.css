@@ -88,7 +88,7 @@ body {
   z-index: 1000;
 }
 .search-form.selected--mobile {
-  position: absolute;
+  position: fixed;
   width: 100vw;
   height: 100vh;
   border-radius: 0;
@@ -230,7 +230,7 @@ body {
 .filtering-options-container,
 .reservation-container {
   display: none;
-  position: absolute;
+  position: fixed;
   z-index: 999;
   top: 0;
   right: 0;
@@ -241,8 +241,17 @@ body {
   padding: 2.4rem 2.4rem;
 }
 
+.filtering-options-container.visible {
+  display: inline-block;
+}
+
 .reservation-container.visible {
   display: inline-block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .sorting-filtering-container {

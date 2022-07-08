@@ -105,7 +105,7 @@ body {
   z-index: 1000;
 }
 .search-form.selected--mobile {
-  position: absolute;
+  position: fixed;
   width: 100vw;
   height: 100vh;
   border-radius: 0;
