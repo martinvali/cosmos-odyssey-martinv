@@ -5,8 +5,6 @@ const handleError = require("../helpers/handleError");
 const { io } = require("../configs/server.js");
 
 function fetchData() {
-  // AN FUNCTION WHICH REQUESTS NEW PRICELIST DATA AS SOON AS THE OLD ONE EXPRIES
-
   axios
     .get("https://cosmos-odyssey.azurewebsites.net/api/v1.0/TravelPrices")
     .then(async function (response) {
