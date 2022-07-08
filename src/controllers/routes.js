@@ -23,7 +23,10 @@ async function handleRoutes(req, res) {
   );
 
   if (!searchedRoute) {
-    res.render("noresults");
+    res.render("noresults", {
+      from: queryParameters.origin,
+      to: queryParameters.destination,
+    });
     return;
   }
 
