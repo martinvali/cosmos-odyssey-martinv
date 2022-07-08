@@ -22,6 +22,12 @@ html {
   outline-width: 2px;
 }
 
+.company-filter:focus + .company-filter-style {
+  outline: var(--color-pink--light, #e599f7);
+  outline-style: solid;
+  outline-width: 3px;
+}
+
 *:focus {
   outline: none;
 }
