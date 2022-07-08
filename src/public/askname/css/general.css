@@ -16,6 +16,12 @@ html {
   --edge-distance: 2.4rem;
 }
 
+.user-tabbing *:focus {
+  outline: var(--color-pink--light, #e599f7);
+  outline-style: solid;
+  outline-width: 2px;
+}
+
 *:focus {
   outline: none;
 }
