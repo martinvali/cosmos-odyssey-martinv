@@ -53,8 +53,8 @@ async function saveBooking(req, res) {
 
   await Booking.create(bookingData);
 
-  res.cookie("firstName", firstName, { httpOnly: true, secure: true });
-  res.cookie("lastName", lastName, { httpOnly: true, secure: true });
+  res.cookie("firstname", firstName, { httpOnly: true, secure: true });
+  res.cookie("lastname", lastName, { httpOnly: true, secure: true });
 
   const bookings = await findBookings(firstName, lastName);
 
