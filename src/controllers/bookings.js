@@ -36,6 +36,9 @@ async function saveBooking(req, res) {
     travelDates,
   } = req.body;
 
+  const sanitizedFirstName = sanitize(firstName).trim().toLowerCase();
+  const sanitizedLastName = sanitize(lastName).trim().toLowerCase();
+
   const bookingData = {
     route: {
       routeId: id,
@@ -47,8 +50,8 @@ async function saveBooking(req, res) {
       distance,
       companyName,
     },
-    firstName: firstName.trim().toLowerCase(),
-    lastName: lastName.trim().toLowerCase(),
+    firstName: sanitizedFirstName,
+    lastName: sanitizedLastName,
   };
 
   await Booking.create(bookingData);
@@ -56,7 +59,7 @@ async function saveBooking(req, res) {
   res.cookie("firstname", firstName, { httpOnly: true, secure: true });
   res.cookie("lastname", lastName, { httpOnly: true, secure: true });
 
-  const bookings = await findBookings(firstName, lastName);
+  const bookings = await findBookings(sanitizedFirstName, sanitizedLastName);
 
   res.render("bookings", { bookings });
 }
