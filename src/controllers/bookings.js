@@ -14,8 +14,8 @@ async function validateName(req, res) {
     return;
   }
 
-  const sanitizedFirstName = sanitize(firstName);
-  const sanitizedLastName = sanitize(lastName);
+  const sanitizedFirstName = sanitize(firstName).trim().toLowerCase();
+  const sanitizedLastName = sanitize(lastName).trim().toLowerCase();
 
   const bookings = await findBookings(sanitizedFirstName, sanitizedLastName);
 
@@ -47,8 +47,8 @@ async function saveBooking(req, res) {
       distance,
       companyName,
     },
-    firstName,
-    lastName,
+    firstName: firstName.trim().toLowerCase(),
+    lastName: lastName.trim().toLowerCase(),
   };
 
   await Booking.create(bookingData);
