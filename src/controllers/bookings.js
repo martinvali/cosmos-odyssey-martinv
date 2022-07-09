@@ -6,7 +6,7 @@ async function findBookings(firstName, lastName) {
 }
 
 async function validateName(req, res) {
-  const { firstName, lastName } = req.cookies;
+  const { firstname: firstName, lastname: lastName } = req.cookies;
 
   if (!firstName || !lastName) {
     res.render("askname");
