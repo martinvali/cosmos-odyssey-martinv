@@ -1,4 +1,5 @@
 const { Booking } = require("../models/BookingsModel.js");
+const sanitize = require("mongo-sanitize");
 
 async function findBookings(firstName, lastName) {
   const bookings = await Booking.find({ firstName, lastName });
@@ -13,7 +14,10 @@ async function validateName(req, res) {
     return;
   }
 
-  const bookings = await findBookings(firstName, lastName);
+  const sanitizedFirstName = sanitize(firstName);
+  const sanitizedLastName = sanitize(lastName);
+
+  const bookings = await findBookings(sanitizedFirstName, sanitizedLastName);
 
   res.render("bookings", { bookings });
 }
