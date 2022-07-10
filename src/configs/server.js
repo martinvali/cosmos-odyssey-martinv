@@ -11,6 +11,9 @@ app.set("views", __dirname + "/../views");
 app.use(express.static(__dirname + "/../public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(enforce.HTTPS({ trustProtoHeader: true }));
+
+if (app.get("env") === "production") {
+  app.use(enforce.HTTPS({ trustProtoHeader: true }));
+}
 
 module.exports = { app, server, io };
