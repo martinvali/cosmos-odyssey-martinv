@@ -24,4 +24,4 @@ The following steps need to be taken in order to run the code locally:
 * Add your MongoDB URI to src/configs/configurations.env, make sure the outer quotation marks ("") remain intact.
 * Run npm install
 * Run npm run start
-* Navigate to https://localhost:3000/ in the browser
+* Navigate to http://localhost:3000/ in the browser
