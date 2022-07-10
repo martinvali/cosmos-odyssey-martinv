@@ -7,7 +7,7 @@ const {
   sortTimeDescending,
 } = require("../models/RoutesModel.js");
 
-async function handleRoutes(req, res) {
+async function sendRoutes(req, res) {
   const queryParameters = req.query;
 
   if (Object.keys(queryParameters).length === 0) {
@@ -54,4 +54,4 @@ async function handleRoutes(req, res) {
   });
 }
 
-module.exports = handleRoutes;
+module.exports = sendRoutes;
