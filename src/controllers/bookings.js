@@ -6,18 +6,10 @@ async function findBookings(firstName, lastName) {
   return bookings;
 }
 
-async function validateName(req, res) {
-  const { firstname: firstName, lastname: lastName } = req.cookies;
+async function sendBookings(req, res) {
+  const { firstName, lastName } = req.locals;
 
-  if (!firstName || !lastName) {
-    res.render("askname");
-    return;
-  }
-
-  const sanitizedFirstName = sanitize(firstName).trim().toLowerCase();
-  const sanitizedLastName = sanitize(lastName).trim().toLowerCase();
-
-  const bookings = await findBookings(sanitizedFirstName, sanitizedLastName);
+  const bookings = await findBookings(firstName, lastName);
 
   res.render("bookings", { bookings });
 }
@@ -64,4 +56,4 @@ async function saveBooking(req, res) {
   res.render("bookings", { bookings });
 }
 
-module.exports = { validateName, saveBooking };
+module.exports = { sendBookings, saveBooking };

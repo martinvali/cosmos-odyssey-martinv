@@ -1,5 +1,5 @@
 function handleError(err, result) {
-  //console.log(err, result);
+  // console.log(err);
 }
 
 module.exports = handleError;
