@@ -11,7 +11,7 @@ A live deployment of the application can be seen here: https://cosmos-odyssey-ma
 
 Main technologies used on the frontend are HTML, CSS and Javascript alongside some NPM Modules such as Webpack.
 
-The backend runs on Node.js and uses multiple libraries such as Express, EJS and Mongoose.
+The backend runs on Node.js and uses multiple modules such as Express, EJS and Mongoose.
 
 The design has been developed in Figma and later coded in HTML & CSS. Illustrations from Undraw are used.
 
