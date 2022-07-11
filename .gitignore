@@ -1,0 +1,3 @@
+src/configs/configs.env
+node_modules
+.vscode
