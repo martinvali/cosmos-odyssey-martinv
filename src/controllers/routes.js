@@ -7,51 +7,59 @@ const {
   sortTimeDescending,
 } = require("../models/RoutesModel.js");
 
+const handleError = require("../helpers/handleError.js");
+
 async function sendRoutes(req, res) {
-  const queryParameters = req.query;
+  try {
+    const queryParameters = req.query;
 
-  if (Object.keys(queryParameters).length === 0) {
-    res.render("noresults");
-    return;
-  }
+    if (Object.keys(queryParameters).length === 0) {
+      res.render("noresults");
+      return;
+    }
 
-  const latestRoutes = await Routes.findLatest();
+    const latestRoutes = await Routes.findLatest();
 
-  const searchedRoute = await latestRoutes.findRoute(
-    queryParameters.origin,
-    queryParameters.destination
-  );
+    if (!latestRoutes) {
+      throw new Error("No routes found");
+    }
 
-  if (!searchedRoute) {
-    res.render("noresults", {
-      from: queryParameters.origin,
-      to: queryParameters.destination,
+    const searchedRoute = await latestRoutes.findRoute(
+      queryParameters.origin,
+      queryParameters.destination
+    );
+
+    if (!searchedRoute) {
+      res.render("noresults", {
+        from: queryParameters.origin,
+        to: queryParameters.destination,
+      });
+    }
+
+    const flightTime = searchedRoute.providers[0].flightTime;
+
+    if (!flightTime) {
+      addFlightTimes(searchedRoute);
+    }
+
+    if (queryParameters.sort === "priciest") {
+      sortPriceDescending(searchedRoute);
+    } else if (queryParameters.sort === "fastest") {
+      sortTimeAscending(searchedRoute);
+    } else if (queryParameters.sort === "slowest") {
+      sortTimeDescending(searchedRoute);
+    } else {
+      sortPriceAscending(searchedRoute);
+    }
+
+    res.render("results", {
+      searchedRoute,
+      sort: queryParameters.sort,
+      filter: queryParameters.filter || [],
     });
-    return;
+  } catch (e) {
+    handleError(e);
   }
-
-  const flightTime = searchedRoute.providers[0].flightTime; // Check if flight time has been calculated for this route
-
-  if (!flightTime) {
-    addFlightTimes(searchedRoute);
-    Routes.findByIdAndUpdate(latestRoutes.id, { latestRoutes });
-  }
-
-  if (queryParameters.sort === "priciest") {
-    sortPriceDescending(searchedRoute);
-  } else if (queryParameters.sort === "fastest") {
-    sortTimeAscending(searchedRoute);
-  } else if (queryParameters.sort === "slowest") {
-    sortTimeDescending(searchedRoute);
-  } else {
-    sortPriceAscending(searchedRoute);
-  }
-
-  res.render("results", {
-    searchedRoute,
-    sort: queryParameters.sort,
-    filter: queryParameters.filter || [],
-  });
 }
 
 module.exports = sendRoutes;

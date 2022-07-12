@@ -21,10 +21,12 @@ function fetchData() {
         { routes: routesData, validUntil },
         handleError
       );
+
       io.sockets.emit("newPrices");
 
       return schedule.scheduleJob(expirationDate, fetchData);
-    });
+    })
+    .catch(handleError);
 }
 
 module.exports = fetchData;
