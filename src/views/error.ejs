@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Something went wrong</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./errorpage/css/general.css" />
+    <link rel="stylesheet" href="./errorpage/css/style.css" />
+    <link rel="stylesheet" href="./errorpage/css/media.css" />
+    <script defer src="./errorpage/js/script.js"></script>
+  </head>
+  <body class="body">
+    <%-include("./components/header.ejs")%>
+    <main class="main outer-container max-width-container">
+      <div class="error-message-container">
+        <h1 class="error-heading"><%=errorMessage%></h1>
+        <p class="error-subtext">Please try again</p>
+        <a
+          href="https://cosmos-odyssey-martinv.herokuapp.com/"
+          class="home-button"
+          >Back to home</a
+        >
+      </div>
+
+      <img class="illustration-img" src="./errorpage/img/planet.svg" />
+    </main>
+  </body>
+</html>

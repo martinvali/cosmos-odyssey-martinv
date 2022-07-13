@@ -1,0 +1,112 @@
+/* FONT SIZES: 1rem/10.00px
+1.25rem/12.50px
+1.563rem/15.63px
+1.953rem/19.53px
+2.441rem/24.41px
+3.052rem/30.52px
+3.815rem/38.15px	
+4.768rem/47.68px	
+5.96rem/59.60px	
+7.451rem/74.51px
+9.313rem/93.13px
+*/
+
+/* SPACING: 
+2px
+4px
+8px
+12px
+16px
+24px
+32px
+40px
+48px
+64px
+80px
+96px
+160px */
+
+body {
+  background-color: #272660;
+}
+/* HEADER STYLES */
+
+.header {
+  padding-top: 2.4rem;
+  margin-bottom: 9.6rem;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2.441rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navigation-option {
+  color: #fff;
+  font-size: 2.441rem;
+  outline: 0;
+  border: 0;
+  background: 0;
+  cursor: pointer;
+  transition: color 0.2s;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.navigation-option:active,
+.navigation-option:hover {
+  color: rgb(253, 225, 247);
+}
+
+.logo,
+.navigation-first-option {
+  margin-right: 2.4rem;
+}
+
+.error-heading,
+.error-subtext {
+  text-align: left;
+  font-size: 3.052rem;
+}
+
+.error-heading {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.error-subtext {
+  font-weight: 400;
+  margin-bottom: 1.2rem;
+}
+
+.home-button {
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  background-color: #b929da;
+  border: 0;
+  border-radius: 10px;
+  display: block;
+  font-size: 2.441rem;
+  padding: 0.8rem 0;
+  margin: 0 auto;
+  transition: background 0.2s;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.home-button:hover,
+.home-button:active {
+  background-color: #9421ae;
+}
+
+.illustration-img {
+  display: none;
+  position: absolute;
+  right: 0;
+  bottom: 2rem;
+  z-index: -1;
+}

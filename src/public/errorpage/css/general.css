@@ -1,0 +1,44 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+:root {
+  --color-pink--light: #e599f7;
+  --color-pink--dark: #b929da;
+  --edge-distance: 2.4rem;
+}
+
+.user-tabbing *:focus {
+  outline: var(--color-pink--light, #e599f7);
+  outline-style: solid;
+  outline-width: 2px;
+}
+
+*:focus {
+  outline: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.max-width-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.outer-container {
+  padding: 0 2.4rem;
+}
+
+.color-pink--light {
+  color: var(--color-pink--light, #e599f7);
+}
