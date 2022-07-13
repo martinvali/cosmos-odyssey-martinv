@@ -1,29 +1,29 @@
 const { Booking } = require("../models/BookingsModel.js");
 const sanitize = require("mongo-sanitize");
-const handleError = require("../helpers/handleError.js");
+const logError = require("../helpers/logError.js");
 
 async function findBookings(firstName, lastName) {
   try {
     const bookings = await Booking.find({ firstName, lastName });
     return bookings;
-  } catch (e) {
-    handleError(e);
+  } catch (err) {
+    logError(err);
   }
 }
 
-async function sendBookings(req, res) {
+async function sendBookings(req, res, next) {
   try {
     const { firstName, lastName } = req.locals;
 
     const bookings = await findBookings(firstName, lastName);
 
     res.render("bookings", { bookings });
-  } catch (e) {
-    handleError(e);
+  } catch (err) {
+    next(err);
   }
 }
 
-async function saveBooking(req, res) {
+async function saveBooking(req, res, next) {
   try {
     const {
       firstname: firstName,
@@ -72,8 +72,8 @@ async function saveBooking(req, res) {
     }
 
     res.render("bookings", { bookings });
-  } catch (e) {
-    handleError(e);
+  } catch (err) {
+    next(err);
   }
 }
 

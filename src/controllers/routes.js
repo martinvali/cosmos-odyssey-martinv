@@ -7,9 +7,7 @@ const {
   sortTimeDescending,
 } = require("../models/RoutesModel.js");
 
-const handleError = require("../helpers/handleError.js");
-
-async function sendRoutes(req, res) {
+async function sendRoutes(req, res, next) {
   try {
     const queryParameters = req.query;
 
@@ -57,8 +55,8 @@ async function sendRoutes(req, res) {
       sort: queryParameters.sort,
       filter: queryParameters.filter || [],
     });
-  } catch (e) {
-    handleError(e);
+  } catch (err) {
+    next(err);
   }
 }
 

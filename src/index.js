@@ -7,7 +7,7 @@ const validateName = require("./middleware/validateSanitizeName.js");
 const sendHomePage = require("./controllers/home.js");
 const sendRoutes = require("./controllers/routes.js");
 const { sendBookings, saveBooking } = require("./controllers/bookings.js");
-
+const handleError = require("./middleware/handleError.js");
 fetchData();
 
 app.get("/", sendHomePage);
@@ -17,6 +17,8 @@ app.get("/routes", sendRoutes);
 app.post("/bookings", saveBooking);
 
 app.get("/bookings", validateName, sendBookings);
+
+app.use(handleError);
 
 const PORT = process.env.PORT || 3000;
 

@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const server = require("http").createServer(app);
 
-const io = require("socket.io")(server, { cors: "*" });
+const io = require("socket.io")(server, { cors: "*" }); // Socket IO is used to send a notification to clients when the pricelist is updated
 
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");

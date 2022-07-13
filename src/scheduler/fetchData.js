@@ -1,8 +1,8 @@
 const axios = require("axios");
 const schedule = require("node-schedule");
 const { Routes } = require("../models/RoutesModel");
-const handleError = require("../helpers/handleError");
 const { io } = require("../configs/server.js");
+const logError = require("../helpers/logError.js");
 
 function fetchData() {
   axios
@@ -17,16 +17,13 @@ function fetchData() {
         return fetchData();
       }
 
-      const newRoute = await Routes.create(
-        { routes: routesData, validUntil },
-        handleError
-      );
+      const newRoute = await Routes.create({ routes: routesData, validUntil });
 
       io.sockets.emit("newPrices");
 
       return schedule.scheduleJob(expirationDate, fetchData);
     })
-    .catch(handleError);
+    .catch(logError);
 }
 
 module.exports = fetchData;
